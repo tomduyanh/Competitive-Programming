@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1688714712 source:d:\2023\cp\cses\distinct colors\main.cpp
+	<bits/stdc++.h>
+	<ext/pb_ds/assoc_container.hpp>
+	<ext/pb_ds/tree_policy.hpp>
+
