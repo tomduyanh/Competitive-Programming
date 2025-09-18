@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+typedef pair <int,int> pii;
+typedef pair <ll , ll> pll;
+
+#define sp " "
+#define nl "\n"
+#define F first
+#define S second
+#define PB push_back
+#define all(arr) arr.begin(), arr.end()
+#define FOR(i, n) for(int i = 1; i <= n; ++i)
+#define FORR(i, n) for(int i = n; i > 0; --i)
+
+const int N = 1e6 + 5;
+const int MOD = 1e9 + 7;
+const ll INF = 1e18;
+
+void freop(){
+    freopen("FILE.INP.txt", "r", stdin);
+    freopen("FILE.OUT.txt", "w", stdout);
+}
+
+int n;
+int a[N];
+
+void solve(){
+    cin >> n;
+    FOR(i, n) cin >> a[i];
+    sort(a+1, a+n+1);
+    double lef = (double)(a[2]+a[1])/2;
+    double rig = (double)(a[n]+a[n-1])/2;
+    double ans = rig - lef;
+    if(n==5){
+        lef = (double)(a[3]+a[1])/2;
+        rig = (double)(a[5]+a[4])/2;
+        double cur = rig - lef;
+        lef = (double)(a[2]+a[1])/2;
+        rig = (double)(a[5]+a[3])/2;
+        double cur1 = rig - lef;
+//        cout << lef << sp << rig << nl;
+        ans = max(cur1, cur);
+//        cout << cur << sp << cur1 << nl;
+    }
+    cout << fixed << setprecision(6) << ans << nl;
+}
+
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    freop();
+    //srand(time(NULL));
+
+    int t; cin >> t;
+    FOR(i, t){
+        cout << "Case #" << i << ": ";
+        solve();
+    }
+
+    return 0;
+}
+
