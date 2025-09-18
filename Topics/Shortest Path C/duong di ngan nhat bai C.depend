@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1687807976 source:d:\2023\cp\t.hung\duong di ngan nhat bai c\main.cpp
+	<bits/stdc++.h>
+	<ext/pb_ds/assoc_container.hpp>
+	<ext/pb_ds/tree_policy.hpp>
+
