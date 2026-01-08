@@ -2,6 +2,8 @@
 
 A comprehensive collection of solutions to competitive programming problems from various online judges and organized by algorithmic topics.
 
+**Author:** [HDA](https://codeforces.com/profile/HDA) | Codeforces Profile
+
 ## 📁 Repository Structure
 
 ```
@@ -110,29 +112,6 @@ Problem-Name/
 - C++ compiler (g++, MinGW, etc.)
 - Code::Blocks IDE (optional, for project files)
 
-### Running Solutions
-
-1. **Using g++ directly:**
-```bash
-g++ -std=c++17 -O2 -Wall main.cpp -o solution
-./solution
-```
-
-2. **Using Code::Blocks:**
-   - Open the `.cbp` project file
-   - Build and run (F9)
-
-3. **Input/Output:**
-   - Most solutions read from standard input (stdin)
-   - Output to standard output (stdout)
-   - Test with provided test cases or custom inputs
-
-## 📊 Progress Tracker
-
-- **CSES Problems:** 56+ problems solved
-- **Codeforces Problems:** 118+ problems solved
-- **Topic-wise Practice:** 70+ categorized problems
-
 ## 🎓 Learning Resources
 
 This repository serves as:
@@ -160,7 +139,9 @@ This repository is maintained for educational purposes. Solutions are original i
 - [CP-Algorithms](https://cp-algorithms.com/)
 - [Competitive Programming 3](https://cpbook.net/)
 
-## 📧 Contact
+## � About
+
+**Codeforces Profile:** [HDA](https://codeforces.com/profile/HDA)
 
 For questions or discussions about solutions, feel free to reach out or open an issue.
 
