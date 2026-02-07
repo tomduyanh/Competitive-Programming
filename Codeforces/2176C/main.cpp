@@ -23,32 +23,36 @@ void freop(){
     freopen("FILE.OUT", "w", stdout);
 }
 
+bool cmp(int a, int b){return a > b;}
 
+int n, a[N];
 void solve(){
-    int n, k, q; cin >> n >> k >> q;
-    int c, l, r;
-    vector <int> Min(n+2), Mex(n+2), ans(n+1);
-    while(q--){
-        cin >> c >> l >> r;
-        if(c == 1){
-            Min[l]++;
-            Min[r+1]--;
+    cin >> n;
+    FOR(i, n) cin >> a[i];
+    sort(a+1, a+n+1, cmp);
+    int last_odd = -1;
+    vector <int> evens;
+    FOR(i, n){
+        if(!(a[i] % 2)) evens.PB(a[i]);
+        if(last_odd == -1 && a[i] % 2) last_odd = a[i];
+    }
+    cout << last_odd << sp;
+    int even_id = 0;
+    int prev2_ans = -1;
+    int prev_ans = last_odd;
+    for(int i = 2; i <= n; ++i){
+        if(even_id < evens.size()){
+            last_odd += evens[even_id];
+            prev2_ans = prev_ans;
+            prev_ans = last_odd;
         }
         else{
-            Mex[l]++;
-            Mex[r+1]--;
+            last_odd = max(prev2_ans, 0);
+            prev2_ans = prev_ans;
+            prev_ans = last_odd;
         }
+        cout << last_odd << sp;// << prev_ans << sp << prev2_ans << nl;
     }
-    int cur_min = 0, cur_mex = 0;
-    FOR(i, n){
-        cur_mex += Mex[i];
-        cur_min += Min[i];
-        if(cur_mex && cur_min) ans[i] = k + 1;
-        else if(cur_min && !cur_mex) ans[i] = k;
-        else if(!cur_min && cur_mex) ans[i] = i % k;
-        else ans[i] = k + 1;
-    }
-    FOR(i, n) cout << ans[i] << sp;
     cout << nl;
 }
 
